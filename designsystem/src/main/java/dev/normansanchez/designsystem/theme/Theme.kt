@@ -1,4 +1,4 @@
-package com.accenture.mentorconnect.ui.theme
+package dev.normansanchez.designsystem.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -7,9 +7,9 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import com.accenture.mentorconnect.ui.theme.MentorConnectBaseTheme.DynamicColors
-import com.accenture.mentorconnect.ui.theme.MentorConnectBaseTheme.DynamicFonts
-import com.accenture.mentorconnect.ui.theme.MentorConnectBaseTheme.DynamicShapes.mcShapes
+import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicColors
+import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicFonts
+import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicShapes.mcShapes
 
 @Composable
 fun MentorConnectTheme(

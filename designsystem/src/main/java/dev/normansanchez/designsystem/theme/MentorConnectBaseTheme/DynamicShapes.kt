@@ -1,4 +1,4 @@
-package com.accenture.mentorconnect.ui.theme.MentorConnectBaseTheme
+package dev.normansanchez.designsystem.theme.MentorConnectBaseTheme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

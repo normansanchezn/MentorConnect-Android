@@ -1,4 +1,4 @@
-package com.accenture.mentorconnect.ui.theme.MentorConnectBaseTheme
+package dev.normansanchez.designsystem.theme.MentorConnectBaseTheme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -6,7 +6,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.accenture.mentorconnect.R
+import dev.normansanchez.designsystem.R
 
 object DynamicFonts {
     val MentorConnectFontFamily = FontFamily(

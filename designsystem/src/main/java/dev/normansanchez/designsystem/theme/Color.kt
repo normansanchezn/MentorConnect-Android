@@ -1,4 +1,4 @@
-package com.accenture.mentorconnect.ui.theme
+package dev.normansanchez.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
