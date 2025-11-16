@@ -1,6 +1,7 @@
 package dev.normansanchez.designsystem.components.previews
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -29,7 +30,10 @@ import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicColors
 @Preview(showBackground = true)
 @Composable
 fun DSIconButtonExamplePreview() {
-    MentorConnectTheme {
+    MentorConnectTheme(
+        darkTheme = isSystemInDarkTheme(),
+        dynamicColor = true
+    ) {
         DSIconButton(
             dsIconButtonModel = DSIconButtonModel(
                 modifier = Modifier.padding(),
@@ -51,7 +55,10 @@ fun DSIconButtonExamplePreview() {
 @Preview(showBackground = true)
 @Composable
 fun DSTextExamplePreview() {
-    MentorConnectTheme {
+    MentorConnectTheme(
+        darkTheme = isSystemInDarkTheme(),
+        dynamicColor = true
+    ) {
         Column(
             modifier = Modifier.fillMaxSize().background(DynamicColors.backgroundVar),
             horizontalAlignment = Alignment.CenterHorizontally,

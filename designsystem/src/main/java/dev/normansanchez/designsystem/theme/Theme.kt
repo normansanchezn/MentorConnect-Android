@@ -1,36 +1,42 @@
 package dev.normansanchez.designsystem.theme
 
 import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicColors
-import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicFonts
 import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicShapes.mcShapes
 
 @Composable
 fun MentorConnectTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    darkTheme: Boolean,
+    dynamicColor: Boolean,
     content: @Composable () -> Unit
 ) {
-    val colorTheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+    val colorScheme =
+        if (dynamicColor && Build.VERSION.SDK_INT >= 31) {
             val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
+            if (darkTheme) {
+                dynamicDarkColorScheme(context)
+            } else {
+                dynamicLightColorScheme(context)
+            }
+        } else {
+            if (darkTheme) {
+                DynamicColors.DarkColorScheme
+            } else {
+                DynamicColors.LightColorScheme
+            }
         }
 
-        darkTheme -> DynamicColors.DarkColorScheme
-        else -> DynamicColors.LightColorScheme
-    }
-
+    val shapes = mcShapes
+    val typography = MaterialTheme.typography
     MaterialTheme(
-        colorScheme = colorTheme,
-        typography = DynamicFonts.typography,
-        shapes = mcShapes,
+        colorScheme = colorScheme,
+        typography = typography,
+        shapes = shapes,
         content = content
     )
 }
