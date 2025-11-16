@@ -15,7 +15,6 @@ import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicFonts.MentorCon
 /**
  * DSText
  *
- * @param modifier
  * @param dsTextModel
  *
  * @author Norman Sanchez
@@ -29,7 +28,6 @@ import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicFonts.MentorCon
  */
 @Composable
 fun DSText(
-    modifier: Modifier,
     dsTextModel: DSTextModel
 ) {
     val styleResolved: TextStyle =
@@ -39,7 +37,7 @@ fun DSText(
         getMCColor(dsTextModel.dsTextStyle)
 
     Text(
-        modifier = modifier,
+        modifier = dsTextModel.modifier,
         text = stringResource(dsTextModel.resourceId),
         maxLines = dsTextModel.maxLines,
         fontFamily = MentorConnectFontFamily,

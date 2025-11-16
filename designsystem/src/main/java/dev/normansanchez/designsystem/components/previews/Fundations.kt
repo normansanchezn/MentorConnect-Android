@@ -64,30 +64,12 @@ fun DSTextExamplePreview() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = title
-            )
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = subtitle
-            )
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = headline
-            )
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = subheadline
-            )
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = bodyLarge
-            )
-            DSText(
-                Modifier.padding(16.dp),
-                dsTextModel = body
-            )
+            DSText(dsTextModel = title)
+            DSText(dsTextModel = subtitle)
+            DSText(dsTextModel = headline)
+            DSText(dsTextModel = subheadline)
+            DSText(dsTextModel = bodyLarge)
+            DSText(dsTextModel = body)
         }
     }
 }

@@ -54,7 +54,7 @@ fun DSIconButton(
                 .size(48.dp)
                 .background(
                     color = DynamicColors.onPrimaryVar,
-                    shape = RoundedCornerShape(6.dp)
+                    shape = RoundedCornerShape(8.dp)
                 )
                 .clickable(
                     interactionSource = interactionSource,
@@ -77,7 +77,6 @@ fun DSIconButton(
         }
 
         DSText(
-            modifier = Modifier.width(80.dp).padding(top = 8.dp),
             dsTextModel = dsIconButtonModel.dsTextModel
         )
     }

@@ -9,10 +9,12 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import dev.normansanchez.designsystem.R
 import dev.normansanchez.designsystem.components.foundations.iconbutton.DSIconButton
 import dev.normansanchez.designsystem.components.foundations.iconbutton.model.DSIconButtonModel
@@ -43,7 +45,8 @@ class MainActivity : ComponentActivity() {
                                     resourceId = R.string.dummy_txt,
                                     maxLines = 1,
                                     dsTextStyle = DSTextStyle.CAPTION,
-                                    alignmentText = TextAlign.Center
+                                    alignmentText = TextAlign.Center,
+                                    modifier = Modifier.width(80.dp).padding(top = 8.dp)
                                 ),
                                 onClick = {
                                     println("Clicked")
