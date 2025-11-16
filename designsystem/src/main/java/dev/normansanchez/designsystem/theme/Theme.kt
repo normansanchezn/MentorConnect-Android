@@ -7,9 +7,9 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicColors
-import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicFonts
-import dev.normansanchez.designsystem.theme.MentorConnectBaseTheme.DynamicShapes.mcShapes
+import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicColors
+import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicFonts
+import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicShapes.mcShapes
 
 @Composable
 fun MentorConnectTheme(
