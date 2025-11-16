@@ -1,0 +1,101 @@
+package dev.normansanchez.designsystem.theme.dynamiccolors
+
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
+import dev.normansanchez.designsystem.theme.BackgroundDark
+import dev.normansanchez.designsystem.theme.BackgroundLight
+import dev.normansanchez.designsystem.theme.GlassBorderDark
+import dev.normansanchez.designsystem.theme.GlassBorderLight
+import dev.normansanchez.designsystem.theme.GlassDark
+import dev.normansanchez.designsystem.theme.GlassLight
+import dev.normansanchez.designsystem.theme.OnBackgroundDark
+import dev.normansanchez.designsystem.theme.OnBackgroundLight
+import dev.normansanchez.designsystem.theme.OnPrimaryDark
+import dev.normansanchez.designsystem.theme.OnPrimaryLight
+import dev.normansanchez.designsystem.theme.OnSecondaryDark
+import dev.normansanchez.designsystem.theme.OnSecondaryLight
+import dev.normansanchez.designsystem.theme.OnSurfaceDark
+import dev.normansanchez.designsystem.theme.OnSurfaceLight
+import dev.normansanchez.designsystem.theme.OnTertiaryDark
+import dev.normansanchez.designsystem.theme.OnTertiaryLight
+import dev.normansanchez.designsystem.theme.OutlineDark
+import dev.normansanchez.designsystem.theme.OutlineLight
+import dev.normansanchez.designsystem.theme.PrimaryDark
+import dev.normansanchez.designsystem.theme.PrimaryLight
+import dev.normansanchez.designsystem.theme.SecondaryDark
+import dev.normansanchez.designsystem.theme.SecondaryLight
+import dev.normansanchez.designsystem.theme.SurfaceDark
+import dev.normansanchez.designsystem.theme.SurfaceLight
+import dev.normansanchez.designsystem.theme.TertiaryDark
+import dev.normansanchez.designsystem.theme.TertiaryLight
+
+object DynamicColors {
+    val primaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) PrimaryDark else PrimaryLight
+
+    val onPrimaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) PrimaryLight else PrimaryDark
+
+    val secondaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) SecondaryDark else SecondaryLight
+
+    val onSecondaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) OnSecondaryDark else OnSecondaryLight
+
+    val backgroundVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) BackgroundDark else BackgroundLight
+
+    val onBackgroundVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) OnBackgroundDark else OnBackgroundLight
+
+    val surfaceVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) SurfaceDark else SurfaceLight
+
+    val onSurfaceVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) OnSurfaceDark else OnSurfaceLight
+
+    val outlineVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) OutlineDark else OutlineLight
+
+    val glass: Color @Composable get() =
+        if (isSystemInDarkTheme()) GlassDark else GlassLight
+
+    val glassBorder: Color @Composable get() =
+        if (isSystemInDarkTheme()) GlassBorderDark else GlassBorderLight
+
+    val tertiaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) TertiaryDark else TertiaryLight
+
+    val onTertiaryVar: Color @Composable get() =
+        if (isSystemInDarkTheme()) OnTertiaryDark else OnTertiaryLight
+    val DarkColorScheme = darkColorScheme(
+        primary = PrimaryDark,
+        onPrimary = OnPrimaryDark,
+        secondary = SecondaryDark,
+        onSecondary = OnSecondaryDark,
+        tertiary = TertiaryDark,
+        onTertiary = OnTertiaryDark,
+        background = BackgroundDark,
+        onBackground = OnBackgroundDark,
+        surface = SurfaceDark,
+        onSurface = OnSurfaceDark,
+        outline = OutlineDark
+    )
+
+    val LightColorScheme = lightColorScheme(
+        primary = PrimaryLight,
+        onPrimary = OnPrimaryLight,
+        secondary = SecondaryLight,
+        onSecondary = OnSecondaryLight,
+        tertiary = TertiaryLight,
+        onTertiary = OnTertiaryLight,
+        background = BackgroundLight,
+        onBackground = OnBackgroundLight,
+        surface = SurfaceLight,
+        onSurface = OnSurfaceLight,
+        outline = OutlineLight
+    )
+}
