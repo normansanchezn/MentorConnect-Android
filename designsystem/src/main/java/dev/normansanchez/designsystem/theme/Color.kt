@@ -2,50 +2,68 @@ package dev.normansanchez.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
-// Light theme
+// Brand
+val PrimaryLight = Color(0xFF0066FF) // #0066FF
+val PrimaryDark = Color(0xFF66AFFF)  // #66AFFF
 
-val PrimaryLight = Color(0xFFA100FF)     // Accenture Purple
-val OnPrimaryLight = Color(0xFFCE93D8)
+val SecondaryLight = Color(0xFF7C3AED) // #7C3AED
+val SecondaryDark = Color(0xFFC4A8FF)  // #C4A8FF
 
-val SecondaryLight = Color(0xFF7F00CC)   // Violet
+val TertiaryLight = Color(0xFF10D7AE) // #10D7AE
+val TertiaryDark = Color(0xFF93F2DB)  // #93F2DB
+
+// Backgrounds
+val BackgroundLight = Color(0xFFF8FAFC) // #F8FAFC
+val BackgroundDark = Color(0xFF020617)  // #020617
+
+val SurfaceLight = Color(0xFFFFFFFF) // #FFFFFF
+val SurfaceDark = Color(0xFF020617)  // #020617
+
+val SurfaceSecondaryLight = Color(0xFFF1F5F9) // #F1F5F9
+val SurfaceSecondaryDark = Color(0xFF111827)  // #111827
+
+// Text
+val TextTitleLight = Color(0xFF0F172A) // #0F172A
+val TextTitleDark = Color(0xFFF9FAFB)  // #F9FAFB
+
+val TextSubtitleLight = Color(0xFF4B5563) // #4B5563
+val TextSubtitleDark = Color(0xFFD1D5DB)  // #D1D5DB
+
+val TextBodyLight = Color(0xFF111827) // #111827
+val TextBodyDark = Color(0xFFE5E7EB)  // #E5E7EB
+
+val TextCaptionLight = Color(0xFF6B7280) // #6B7280
+val TextCaptionDark = Color(0xFF9CA3AF)  // #9CA3AF
+val OnBackgroundLight = Color(0xFF0F172A)
+val OnBackgroundDark = Color(0xFFE5E7EB)
+
+val OnSurfaceLight = TextBodyLight
+val OnSurfaceDark = TextBodyDark
+
+val OnPrimaryLight = Color(0xFFFFFFFF)
+val OnPrimaryDark = Color(0xFF0F172A)
+
 val OnSecondaryLight = Color(0xFFFFFFFF)
-
-val TertiaryLight = Color(0xFFFF2DA8)    // Magenta Glow
-val OnTertiaryLight = Color(0xFF000000)
-
-val BackgroundLight = Color(0xFFF7F7F9)  // Very light gray
-val OnBackgroundLight = Color(0xFF1A1A1A)
-
-val SurfaceLight = Color(0xFFFFFFFF)
-val OnSurfaceLight = Color(0xFF141414)
-
-val OutlineLight = Color(0xFFD5A6F3)     // Purple-ish outline
-
-// Glass
-val GlassLight = Color(0x66FFFFFF)
-val GlassBorderLight = Color(0x22FFFFFF)
-
-
-// Dark theme
-
-val PrimaryDark = Color(0xFFCA5CFF)      // Lightened Purple for contrast
-val OnPrimaryDark = Color(0xFF7B1FA2)
-
-val SecondaryDark = Color(0xFFB56DFF)    // Light Violet
-val OnSecondaryDark = Color(0xFF1A1A1A)
-
-val TertiaryDark = Color(0xFFFF4FC4)     // Bright Magenta Glow
+val OnSecondaryDark = Color(0xFF111827)
+val OnTertiaryLight = Color(0xFF022C22)
 val OnTertiaryDark = Color(0xFFFFFFFF)
 
-val BackgroundDark = Color(0xFF000000)   // Accenture uses TRUE black in digital
-val OnBackgroundDark = Color(0xFFE6E6E6)
+// States
+val SuccessLight = Color(0xFF22C55E) // #22C55E
+val SuccessDark = Color(0xFF4ADE80)  // #4ADE80
 
-val SurfaceDark = Color(0xFF1C1C1E)
-val OnSurfaceDark = Color(0xFFFFFFFF)
+val WarningLight = Color(0xFFF59E0B) // #F59E0B
+val WarningDark = Color(0xFFFBBF24)  // #FBBF24
 
-val OutlineDark = Color(0xFF5C2D80)      // Purple 900
+val ErrorLight = Color(0xFFEF4444) // #EF4444
+val ErrorDark = Color(0xFFFCA5A5)  // #FCA5A5
 
-// Glass
-val GlassDark = Color(0x33000000)
-val GlassBorderDark = Color(0x22FFFFFF)
+val OutlineLight = Color(0xFFE5E7EB) // gris suave
+val OutlineDark = Color(0xFF374151)  // gris oscuro
 
+// Efecto glass (blancos translúcidos)
+val GlassLight = Color(0x66FFFFFF)       // 40% white
+val GlassDark = Color(0x661F2933)        // 40% azul grisáceo
+
+val GlassBorderLight = Color(0x33FFFFFF) // 20% white
+val GlassBorderDark = Color(0x3380A4FF)  // 20% azul
