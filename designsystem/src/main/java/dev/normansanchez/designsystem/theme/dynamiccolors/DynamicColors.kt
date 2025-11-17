@@ -7,6 +7,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import dev.normansanchez.designsystem.theme.BackgroundDark
 import dev.normansanchez.designsystem.theme.BackgroundLight
+import dev.normansanchez.designsystem.theme.ErrorDark
+import dev.normansanchez.designsystem.theme.ErrorLight
 import dev.normansanchez.designsystem.theme.GlassBorderDark
 import dev.normansanchez.designsystem.theme.GlassBorderLight
 import dev.normansanchez.designsystem.theme.GlassDark
@@ -27,52 +29,95 @@ import dev.normansanchez.designsystem.theme.PrimaryDark
 import dev.normansanchez.designsystem.theme.PrimaryLight
 import dev.normansanchez.designsystem.theme.SecondaryDark
 import dev.normansanchez.designsystem.theme.SecondaryLight
+import dev.normansanchez.designsystem.theme.SuccessDark
+import dev.normansanchez.designsystem.theme.SuccessLight
 import dev.normansanchez.designsystem.theme.SurfaceDark
 import dev.normansanchez.designsystem.theme.SurfaceLight
+import dev.normansanchez.designsystem.theme.SurfaceSecondaryDark
+import dev.normansanchez.designsystem.theme.SurfaceSecondaryLight
 import dev.normansanchez.designsystem.theme.TertiaryDark
 import dev.normansanchez.designsystem.theme.TertiaryLight
-
+import dev.normansanchez.designsystem.theme.TextBodyDark
+import dev.normansanchez.designsystem.theme.TextBodyLight
+import dev.normansanchez.designsystem.theme.TextCaptionDark
+import dev.normansanchez.designsystem.theme.TextCaptionLight
+import dev.normansanchez.designsystem.theme.TextSubtitleDark
+import dev.normansanchez.designsystem.theme.TextSubtitleLight
+import dev.normansanchez.designsystem.theme.TextTitleDark
+import dev.normansanchez.designsystem.theme.TextTitleLight
+import dev.normansanchez.designsystem.theme.WarningDark
+import dev.normansanchez.designsystem.theme.WarningLight
 object DynamicColors {
-    val primaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) PrimaryDark else PrimaryLight
 
-    val onPrimaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) PrimaryLight else PrimaryDark
+    // Brand
+    val primaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) PrimaryDark else PrimaryLight
 
-    val secondaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) SecondaryDark else SecondaryLight
+    val onPrimaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OnPrimaryDark else OnPrimaryLight
 
-    val onSecondaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) OnSecondaryDark else OnSecondaryLight
+    val secondaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) SecondaryDark else SecondaryLight
 
-    val backgroundVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) BackgroundDark else BackgroundLight
+    val onSecondaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OnSecondaryDark else OnSecondaryLight
 
-    val onBackgroundVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) OnBackgroundDark else OnBackgroundLight
+    val tertiaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) TertiaryDark else TertiaryLight
 
-    val surfaceVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) SurfaceDark else SurfaceLight
+    val onTertiaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OnTertiaryDark else OnTertiaryLight
 
-    val onSurfaceVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) OnSurfaceDark else OnSurfaceLight
+    // Backgrounds
+    val backgroundVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) BackgroundDark else BackgroundLight
 
-    val outlineVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) OutlineDark else OutlineLight
+    val onBackgroundVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OnBackgroundDark else OnBackgroundLight
 
-    val glass: Color @Composable get() =
-        if (isSystemInDarkTheme()) GlassDark else GlassLight
+    val surfaceVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) SurfaceDark else SurfaceLight
 
-    val glassBorder: Color @Composable get() =
-        if (isSystemInDarkTheme()) GlassBorderDark else GlassBorderLight
+    val onSurfaceVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OnSurfaceDark else OnSurfaceLight
 
-    val tertiaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) TertiaryDark else TertiaryLight
+    val surfaceSecondaryVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) SurfaceSecondaryDark else SurfaceSecondaryLight
 
-    val whiteAlways: Color @Composable get() = OnTertiaryDark
+    // Text helpers
+    val textTitleVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) TextTitleDark else TextTitleLight
 
-    val onTertiaryVar: Color @Composable get() =
-        if (isSystemInDarkTheme()) OnTertiaryDark else OnTertiaryLight
+    val textSubtitleVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) TextSubtitleDark else TextSubtitleLight
+
+    val textBodyVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) TextBodyDark else TextBodyLight
+
+    val textCaptionVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) TextCaptionDark else TextCaptionLight
+
+    // States
+    val successVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) SuccessDark else SuccessLight
+
+    val warningVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) WarningDark else WarningLight
+
+    val errorVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) ErrorDark else ErrorLight
+
+    // Outline / glass (Android-specific)
+    val outlineVar: Color
+        @Composable get() = if (isSystemInDarkTheme()) OutlineDark else OutlineLight
+
+    val glass: Color
+        @Composable get() = if (isSystemInDarkTheme()) GlassDark else GlassLight
+
+    val glassBorder: Color
+        @Composable get() = if (isSystemInDarkTheme()) GlassBorderDark else GlassBorderLight
+    val whiteAlways: Color
+        @Composable get() = OnTertiaryDark
     val DarkColorScheme = darkColorScheme(
         primary = PrimaryDark,
         onPrimary = OnPrimaryDark,

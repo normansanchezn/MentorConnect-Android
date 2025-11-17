@@ -20,6 +20,9 @@ import dev.normansanchez.designsystem.components.foundations.button.model.DSButt
 import dev.normansanchez.designsystem.components.foundations.text.DSText
 import dev.normansanchez.designsystem.components.foundations.iconbutton.DSIconButton
 import dev.normansanchez.designsystem.components.foundations.iconbutton.model.DSIconButtonModel
+import dev.normansanchez.designsystem.components.foundations.media.image.DSImage
+import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageModel
+import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageType
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextStyle
 import dev.normansanchez.designsystem.components.previews.FoundationsHelper.body
@@ -94,6 +97,26 @@ fun DSButtonPrimaryExample() {
                 },
                 buttonType = DSButtonType.PRIMARY,
                 isEnabled = true
+            )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun DSImageExample() {
+    MentorConnectTheme(
+        darkTheme = true,
+        dynamicColor = true
+    ) {
+        DSImage(
+            dsImageModel = DSImageModel(
+                imageSource = "https://uiskaogodllxicvnfdab.supabase.co/storage/v1/object/public/General%20assets/norman.jpg",
+                size = 140.dp,
+                imageType = DSImageType.CIRCULAR,
+                onClickImage = {
+                    Log.i("TAG", "onCreate: On click image")
+                }
             )
         )
     }
