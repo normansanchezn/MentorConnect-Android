@@ -1,5 +1,6 @@
 package dev.normansanchez.designsystem.components.previews
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
@@ -13,6 +14,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.normansanchez.designsystem.R
+import dev.normansanchez.designsystem.components.foundations.button.DSButton
+import dev.normansanchez.designsystem.components.foundations.button.model.DSButtonModel
+import dev.normansanchez.designsystem.components.foundations.button.model.DSButtonType
 import dev.normansanchez.designsystem.components.foundations.text.DSText
 import dev.normansanchez.designsystem.components.foundations.iconbutton.DSIconButton
 import dev.normansanchez.designsystem.components.foundations.iconbutton.model.DSIconButtonModel
@@ -71,5 +75,26 @@ fun DSTextExamplePreview() {
             DSText(dsTextModel = bodyLarge)
             DSText(dsTextModel = body)
         }
+    }
+}
+
+@Preview(showSystemUi = true)
+@Composable
+fun DSButtonPrimaryExample() {
+    MentorConnectTheme(
+        darkTheme = isSystemInDarkTheme(),
+        dynamicColor = true
+    ) {
+        DSButton(
+            dsButtonModel = DSButtonModel(
+                modifier = Modifier.padding(),
+                textResourceId = R.string.dummy_txt,
+                onClick = {
+                    Log.i("TAG", "onCreate: Button primary clicked")
+                },
+                buttonType = DSButtonType.PRIMARY,
+                isEnabled = true
+            )
+        )
     }
 }
