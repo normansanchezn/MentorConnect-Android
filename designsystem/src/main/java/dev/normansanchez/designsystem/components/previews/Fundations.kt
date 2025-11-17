@@ -27,6 +27,7 @@ import dev.normansanchez.designsystem.components.foundations.media.image.model.D
 import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottie
 import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottieModel
 import dev.normansanchez.designsystem.components.foundations.media.video.DSVideo
+import dev.normansanchez.designsystem.components.foundations.media.video.model.DSVideoModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextStyle
 import dev.normansanchez.designsystem.components.previews.FoundationsHelper.body
@@ -152,7 +153,10 @@ fun DSVideoExample() {
         dynamicColor = true
     ) {
         DSVideo(
-            videoRawRes = R.raw.welcome_video,
+            dsVideoModel = DSVideoModel(
+                videoRawRes = R.raw.welcome_video,
+                modifier = Modifier.fillMaxSize()
+            )
         )
     }
 }

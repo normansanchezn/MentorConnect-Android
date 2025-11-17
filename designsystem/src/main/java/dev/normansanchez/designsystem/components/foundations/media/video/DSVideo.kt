@@ -1,9 +1,7 @@
 package dev.normansanchez.designsystem.components.foundations.media.video
 
 import android.annotation.SuppressLint
-import androidx.annotation.RawRes
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
@@ -22,29 +20,38 @@ import androidx.media3.datasource.RawResourceDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
+import dev.normansanchez.designsystem.components.foundations.media.video.model.DSVideoModel
 
+/**
+ * DSVideo
+ *
+ * @param: DSVideoModel
+ * @see DSVideoModel
+ *
+ * @author: Normán Sánchez
+ * @since: v1.0.0
+ * @version: 1.0.0
+ *
+ * @sample dev.normansanchez.designsystem.components.previews.DSVideoExample
+ */
 @SuppressLint("UnsafeOptInUsageError")
 @Composable
 fun DSVideo(
-    @RawRes videoRawRes: Int,
-    modifier: Modifier = Modifier,
-    playWhenReady: Boolean = true,
-    isMuted: Boolean = true,
-    content: @Composable BoxScope.() -> Unit = {}
+    dsVideoModel: DSVideoModel
 ) {
     val context = LocalContext.current
     val lifecycleOwner = LocalLifecycleOwner.current
-    val playWhenReadyState by rememberUpdatedState(playWhenReady)
+    val playWhenReadyState by rememberUpdatedState(dsVideoModel.playWhenReady)
 
-    val exoPlayer = remember(context, videoRawRes) {
+    val exoPlayer = remember(context, dsVideoModel.videoRawRes) {
         ExoPlayer
             .Builder(context)
             .build()
             .apply {
-                val uri = RawResourceDataSource.buildRawResourceUri(videoRawRes)
+                val uri = RawResourceDataSource.buildRawResourceUri(dsVideoModel.videoRawRes)
                 setMediaItem(MediaItem.fromUri(uri))
                 repeatMode = Player.REPEAT_MODE_ALL
-                volume = if (isMuted) 0f else 1f
+                volume = if (dsVideoModel.isMuted) 0f else 1f
                 this.playWhenReady = playWhenReady
                 prepare()
             }
@@ -74,7 +81,7 @@ fun DSVideo(
     }
 
     Box(
-        modifier = modifier.fillMaxSize()
+        modifier = dsVideoModel.modifier.fillMaxSize()
     ) {
         AndroidView(
             modifier = Modifier.matchParentSize(),
@@ -89,6 +96,6 @@ fun DSVideo(
                 it.player = exoPlayer
             }
         )
-        content()
+        dsVideoModel.content
     }
 }
