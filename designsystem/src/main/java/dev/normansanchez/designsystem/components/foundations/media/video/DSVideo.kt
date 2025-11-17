@@ -10,6 +10,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
@@ -20,7 +21,9 @@ import androidx.media3.datasource.RawResourceDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.ui.AspectRatioFrameLayout
 import androidx.media3.ui.PlayerView
+import dev.normansanchez.designsystem.R
 import dev.normansanchez.designsystem.components.foundations.media.video.model.DSVideoModel
+import dev.normansanchez.designsystem.theme.MentorConnectTheme
 
 /**
  * DSVideo
@@ -97,5 +100,21 @@ fun DSVideo(
             }
         )
         dsVideoModel.content
+    }
+}
+
+@Preview
+@Composable
+fun DSVideoExample() {
+    MentorConnectTheme(
+        darkTheme = true,
+        dynamicColor = true
+    ) {
+        DSVideo(
+            dsVideoModel = DSVideoModel(
+                videoRawRes = R.raw.welcome_video,
+                modifier = Modifier.fillMaxSize()
+            )
+        )
     }
 }

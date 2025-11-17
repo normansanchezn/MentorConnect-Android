@@ -5,9 +5,10 @@ import dev.normansanchez.designsystem.components.foundations.text.model.DSTextMo
 import dev.normansanchez.designsystem.functional.OnClickCallback
 
 data class DSIconButtonModel(
-    val modifier: Modifier = Modifier,
+    val modifier: Modifier,
     val resourceIconId: Int,
+    val onClick: () -> Unit,
     val dsTextModel: DSTextModel,
-    val stepDelay: Long = 100L,
-    val onClick: OnClickCallback = {}
+    val style: DSIconButtonStyle = DSIconButtonStyle.PRIMARY,
+    val stepDelay: Long = 500L
 )

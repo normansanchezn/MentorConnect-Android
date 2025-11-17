@@ -6,8 +6,9 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
-import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicColors
-import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicShapes.mcShapes
+import dev.normansanchez.designsystem.theme.dynamics.DynamicColors
+import dev.normansanchez.designsystem.theme.dynamics.DynamicFonts
+import dev.normansanchez.designsystem.theme.dynamics.DynamicShapes.mcShapes
 
 @Composable
 fun MentorConnectTheme(
@@ -32,7 +33,7 @@ fun MentorConnectTheme(
         }
 
     val shapes = mcShapes
-    val typography = MaterialTheme.typography
+    val typography = DynamicFonts.typography
     MaterialTheme(
         colorScheme = colorScheme,
         typography = typography,

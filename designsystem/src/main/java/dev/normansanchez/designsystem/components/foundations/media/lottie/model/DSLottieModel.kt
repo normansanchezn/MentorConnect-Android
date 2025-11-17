@@ -1,4 +1,4 @@
-package dev.normansanchez.designsystem.components.foundations.media.lottie
+package dev.normansanchez.designsystem.components.foundations.media.lottie.model
 
 import androidx.annotation.RawRes
 import androidx.compose.ui.Modifier

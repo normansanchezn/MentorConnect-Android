@@ -1,4 +1,4 @@
-package dev.normansanchez.designsystem.theme.dynamiccolors
+package dev.normansanchez.designsystem.theme.dynamics
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

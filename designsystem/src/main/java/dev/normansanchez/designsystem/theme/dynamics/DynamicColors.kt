@@ -1,4 +1,4 @@
-package dev.normansanchez.designsystem.theme.dynamiccolors
+package dev.normansanchez.designsystem.theme.dynamics
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.darkColorScheme
@@ -49,7 +49,9 @@ import dev.normansanchez.designsystem.theme.WarningDark
 import dev.normansanchez.designsystem.theme.WarningLight
 object DynamicColors {
 
-    // Brand
+    // -----------------------------
+    // BRAND (Primary, Secondary, Tertiary)
+    // -----------------------------
     val primaryVar: Color
         @Composable get() = if (isSystemInDarkTheme()) PrimaryDark else PrimaryLight
 
@@ -62,13 +64,17 @@ object DynamicColors {
     val onSecondaryVar: Color
         @Composable get() = if (isSystemInDarkTheme()) OnSecondaryDark else OnSecondaryLight
 
+
     val tertiaryVar: Color
         @Composable get() = if (isSystemInDarkTheme()) TertiaryDark else TertiaryLight
 
     val onTertiaryVar: Color
         @Composable get() = if (isSystemInDarkTheme()) OnTertiaryDark else OnTertiaryLight
 
-    // Backgrounds
+
+    // -----------------------------
+    // BACKGROUND / SURFACE
+    // -----------------------------
     val backgroundVar: Color
         @Composable get() = if (isSystemInDarkTheme()) BackgroundDark else BackgroundLight
 
@@ -81,10 +87,14 @@ object DynamicColors {
     val onSurfaceVar: Color
         @Composable get() = if (isSystemInDarkTheme()) OnSurfaceDark else OnSurfaceLight
 
+
     val surfaceSecondaryVar: Color
         @Composable get() = if (isSystemInDarkTheme()) SurfaceSecondaryDark else SurfaceSecondaryLight
 
-    // Text helpers
+
+    // -----------------------------
+    // TEXT TOKENS (Semantic aliases)
+    // -----------------------------
     val textTitleVar: Color
         @Composable get() = if (isSystemInDarkTheme()) TextTitleDark else TextTitleLight
 
@@ -116,8 +126,10 @@ object DynamicColors {
 
     val glassBorder: Color
         @Composable get() = if (isSystemInDarkTheme()) GlassBorderDark else GlassBorderLight
+
     val whiteAlways: Color
-        @Composable get() = OnTertiaryDark
+        @Composable get() = Color.White
+
     val DarkColorScheme = darkColorScheme(
         primary = PrimaryDark,
         onPrimary = OnPrimaryDark,

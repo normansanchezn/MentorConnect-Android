@@ -1,4 +1,4 @@
-package dev.normansanchez.designsystem.components.foundations.media.image
+package dev.normansanchez.designsystem.components.foundations.media.image.helper
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageModel
-import dev.normansanchez.designsystem.theme.dynamiccolors.DynamicColors.primaryVar
+import dev.normansanchez.designsystem.theme.dynamics.DynamicColors
 
 /**
  * DSImageHelper
@@ -38,8 +38,8 @@ object DSImageHelper {
             modifier = dsImageModel.modifier
                 .size(dsImageModel.size)
                 .clickable { dsImageModel.onClickImage() }
-                .background(primaryVar, RoundedCornerShape(20))
-                .clip(RoundedCornerShape(20)),
+                .background(DynamicColors.primaryVar, RoundedCornerShape(20))
+                .clip(androidx.compose.foundation.shape.RoundedCornerShape(20)),
             contentScale = ContentScale.Crop
         ) {
             it.apply {
@@ -53,18 +53,22 @@ object DSImageHelper {
     @OptIn(ExperimentalGlideComposeApi::class)
     @Composable
     fun resolvedRectangleRoundedWithBackground(dsImageModel: DSImageModel) {
-        Box(modifier =
-            dsImageModel.modifier
-                .size(dsImageModel.size)
-                .clickable {
-                    dsImageModel.onClickImage()
-                }
+        Box(
+            modifier =
+                dsImageModel.modifier
+                    .size(dsImageModel.size)
+                    .clickable {
+                        dsImageModel.onClickImage()
+                    }
         ) {
             Box(
                 modifier = Modifier
                     .matchParentSize()
                     .rotate(45f)
-                    .background(primaryVar.copy(alpha = 0.4F), RoundedCornerShape(20))
+                    .background(
+                        DynamicColors.primaryVar.copy(alpha = 0.4F),
+                        androidx.compose.foundation.shape.RoundedCornerShape(20)
+                    )
             )
 
             GlideImage(
@@ -72,9 +76,11 @@ object DSImageHelper {
                 contentDescription = dsImageModel.imageSource,
                 modifier = dsImageModel.modifier
                     .matchParentSize()
-                    .background(primaryVar, RoundedCornerShape(20))
-                    .clip(RoundedCornerShape(20))
-                ,
+                    .background(
+                        DynamicColors.primaryVar,
+                        androidx.compose.foundation.shape.RoundedCornerShape(20)
+                    )
+                    .clip(androidx.compose.foundation.shape.RoundedCornerShape(20)),
                 contentScale = ContentScale.Crop
             ) {
                 it.apply {
@@ -99,10 +105,9 @@ object DSImageHelper {
                 .clickable {
                     dsImageModel.onClickImage()
                 }
-                .background(color = primaryVar, CircleShape)
+                .background(color = DynamicColors.primaryVar, CircleShape)
                 .clip(CircleShape)
-                .border((1.5).dp, primaryVar, CircleShape)
-            ,
+                .border((1.5).dp, DynamicColors.primaryVar, CircleShape),
             contentScale = ContentScale.Crop,
         ) {
             it.apply {
