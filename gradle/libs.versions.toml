@@ -37,7 +37,7 @@ mockkAndroid = "1.12.0"
 material3 = "1.4.0-alpha10"
 uiGraphics = "1.9.4"
 roomCompilerProcessingTesting = "2.8.3"
-
+lottie = "4.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -73,6 +73,9 @@ hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", ve
 
 #Glide
 glide = { module = "com.github.bumptech.glide:compose", version.ref = "glide" }
+
+# Lottie
+lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie"}
 
 # testing
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect" }

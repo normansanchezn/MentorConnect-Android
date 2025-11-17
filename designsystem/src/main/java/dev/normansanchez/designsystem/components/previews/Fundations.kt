@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,6 +24,8 @@ import dev.normansanchez.designsystem.components.foundations.iconbutton.model.DS
 import dev.normansanchez.designsystem.components.foundations.media.image.DSImage
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageModel
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageType
+import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottie
+import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottieModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextStyle
 import dev.normansanchez.designsystem.components.previews.FoundationsHelper.body
@@ -117,6 +120,24 @@ fun DSImageExample() {
                 onClickImage = {
                     Log.i("TAG", "onCreate: On click image")
                 }
+            )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun DSLottieExample() {
+    MentorConnectTheme(
+        darkTheme = true,
+        dynamicColor = true
+    ) {
+        DSLottie(
+            dsLottieModel = DSLottieModel(
+                modifier = Modifier
+                    .size(500.dp)
+                    .padding(),
+                lottieResourceId = R.raw.shared_lottie
             )
         )
     }
