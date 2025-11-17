@@ -69,6 +69,8 @@ object DynamicColors {
     val tertiaryVar: Color @Composable get() =
         if (isSystemInDarkTheme()) TertiaryDark else TertiaryLight
 
+    val whiteAlways: Color @Composable get() = OnTertiaryDark
+
     val onTertiaryVar: Color @Composable get() =
         if (isSystemInDarkTheme()) OnTertiaryDark else OnTertiaryLight
     val DarkColorScheme = darkColorScheme(

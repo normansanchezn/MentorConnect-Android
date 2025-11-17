@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import dev.normansanchez.designsystem.components.foundations.iconbutton.DSIconButtonHelper.resolvedModifierDSIconButton
 import dev.normansanchez.designsystem.components.foundations.text.DSText
 import dev.normansanchez.designsystem.components.foundations.iconbutton.model.DSIconButtonModel
 import dev.normansanchez.designsystem.theme.OnSecondaryLight
@@ -49,17 +50,13 @@ fun DSIconButton(
         val isPressed by interactionSource.collectIsPressedAsState()
         val pressedListener by rememberUpdatedState(dsIconButtonModel.onClick)
 
+        val resolvedModifier = resolvedModifierDSIconButton(
+            dsIconButtonModel = dsIconButtonModel,
+            interactionSource = interactionSource
+        )
+
         Box(
-            modifier = dsIconButtonModel.modifier
-                .size(48.dp)
-                .background(
-                    color = DynamicColors.onPrimaryVar,
-                    shape = RoundedCornerShape(6.dp)
-                )
-                .clickable(
-                    interactionSource = interactionSource,
-                    onClick = dsIconButtonModel.onClick
-                ),
+            modifier = resolvedModifier,
             contentAlignment = Alignment.Center,
         ) {
             Icon(
@@ -77,7 +74,6 @@ fun DSIconButton(
         }
 
         DSText(
-            modifier = Modifier.width(80.dp).padding(top = 8.dp),
             dsTextModel = dsIconButtonModel.dsTextModel
         )
     }

@@ -1,3 +1,3 @@
 package dev.normansanchez.designsystem.functional
 
-typealias SimpleCallback = () -> Unit
+typealias OnClickCallback = () -> Unit
