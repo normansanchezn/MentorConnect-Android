@@ -1,6 +1,5 @@
 package dev.normansanchez.designsystem.components.foundations.media.image.model
 
-import android.media.MediaRouter
 import androidx.annotation.StringRes
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.Dp

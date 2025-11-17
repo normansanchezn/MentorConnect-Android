@@ -38,6 +38,11 @@ material3 = "1.4.0-alpha10"
 uiGraphics = "1.9.4"
 roomCompilerProcessingTesting = "2.8.3"
 lottie = "4.0.0"
+exoplayer = "1.1.0-beta03"
+media3CommonKtx = "1.8.0"
+media3Ui = "1.8.0"
+
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -77,6 +82,10 @@ glide = { module = "com.github.bumptech.glide:compose", version.ref = "glide" }
 # Lottie
 lottie = { module = "com.airbnb.android:lottie-compose", version.ref = "lottie"}
 
+# Video
+exoplayer = { module = "androidx.media3:media3-exoplayer", version.ref = "exoplayer" }
+media3-ui = { module = "androidx.media3:media3-ui", version.ref = "exoplayer" }
+
 # testing
 kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlinReflect" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
@@ -85,11 +94,12 @@ mockk-android = { module = "io.mockk:mockk-android", version.ref = "mockkAndroid
 androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref = "uiGraphics" }
 androidx-room-compiler-processing-testing = { group = "androidx.room", name = "room-compiler-processing-testing", version.ref = "roomCompilerProcessingTesting" }
+androidx-media3-common-ktx = { group = "androidx.media3", name = "media3-common-ktx", version.ref = "media3CommonKtx" }
+androidx-media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media3Ui" }
 
 [plugins]
 org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
@@ -97,4 +107,3 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid"}
 org-jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
-

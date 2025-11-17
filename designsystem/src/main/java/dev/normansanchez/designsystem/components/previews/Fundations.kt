@@ -26,6 +26,7 @@ import dev.normansanchez.designsystem.components.foundations.media.image.model.D
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageType
 import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottie
 import dev.normansanchez.designsystem.components.foundations.media.lottie.DSLottieModel
+import dev.normansanchez.designsystem.components.foundations.media.video.DSVideo
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextModel
 import dev.normansanchez.designsystem.components.foundations.text.model.DSTextStyle
 import dev.normansanchez.designsystem.components.previews.FoundationsHelper.body
@@ -139,6 +140,19 @@ fun DSLottieExample() {
                     .padding(),
                 lottieResourceId = R.raw.shared_lottie
             )
+        )
+    }
+}
+
+@Preview
+@Composable
+fun DSVideoExample() {
+    MentorConnectTheme(
+        darkTheme = true,
+        dynamicColor = true
+    ) {
+        DSVideo(
+            videoRawRes = R.raw.welcome_video,
         )
     }
 }
