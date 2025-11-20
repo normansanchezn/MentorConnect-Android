@@ -1,4 +1,4 @@
-package dev.normansanchez.designsystem.theme.dynamiccolors
+package dev.normansanchez.designsystem.theme.dynamics
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
@@ -9,6 +9,7 @@ import androidx.compose.ui.unit.sp
 import dev.normansanchez.designsystem.R
 
 object DynamicFonts {
+
     val MentorConnectFontFamily = FontFamily(
         Font(R.font.mc_bold, weight = FontWeight.Bold),
         Font(R.font.mc_semi_bold, weight = FontWeight.SemiBold),
@@ -17,53 +18,62 @@ object DynamicFonts {
         Font(R.font.mc_light, weight = FontWeight.Light),
         Font(R.font.mc_light, weight = FontWeight.ExtraLight)
     )
+
     val typography = Typography(
+
+        /* DISPLAY */
         displayLarge = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 32.sp,
-            letterSpacing = (-0.2).sp
+            fontSize = DynamicDimens.TextSizes.display,
+            letterSpacing = (-0.2f).sp
         ),
         displaySmall = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 30.sp,
-            letterSpacing = (-0.2).sp
+            fontSize = DynamicDimens.TextSizes.xxxl,
+            letterSpacing = (-0.2f).sp
         ),
+
+        /* HEADLINES */
         headlineLarge = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 24.sp
+            fontSize = DynamicDimens.TextSizes.xxl
         ),
         headlineSmall = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Bold,
-            fontSize = 20.sp
+            fontSize = DynamicDimens.TextSizes.xl
         ),
+
+        /* BODY */
         bodyLarge = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Medium,
-            fontSize = 18.sp,
+            fontSize = DynamicDimens.TextSizes.lg
         ),
         bodySmall = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Medium,
-            fontSize = 16.sp,
+            fontSize = DynamicDimens.TextSizes.md
         ),
+
+        /* LABELS */
         labelLarge = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Medium,
-            fontSize = 14.sp,
+            fontSize = DynamicDimens.TextSizes.sm
         ),
         labelMedium = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Medium,
-            fontSize = 12.sp,
+            fontSize = DynamicDimens.TextSizes.xs
         ),
         labelSmall = TextStyle(
             fontFamily = MentorConnectFontFamily,
             fontWeight = FontWeight.Medium,
-            fontSize = 10.sp,
-        ),
+            fontSize = DynamicDimens.TextSizes.xs
+        )
     )
 }

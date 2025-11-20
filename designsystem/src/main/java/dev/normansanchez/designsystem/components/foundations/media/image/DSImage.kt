@@ -1,12 +1,16 @@
 package dev.normansanchez.designsystem.components.foundations.media.image
 
+import android.util.Log
 import androidx.compose.runtime.Composable
-import dev.normansanchez.designsystem.components.foundations.media.image.DSImageHelper.resolvedCircularImageCase
-import dev.normansanchez.designsystem.components.foundations.media.image.DSImageHelper.resolvedNormalCase
-import dev.normansanchez.designsystem.components.foundations.media.image.DSImageHelper.resolvedRectangleRounded
-import dev.normansanchez.designsystem.components.foundations.media.image.DSImageHelper.resolvedRectangleRoundedWithBackground
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import dev.normansanchez.designsystem.components.foundations.media.image.helper.DSImageHelper.resolvedCircularImageCase
+import dev.normansanchez.designsystem.components.foundations.media.image.helper.DSImageHelper.resolvedNormalCase
+import dev.normansanchez.designsystem.components.foundations.media.image.helper.DSImageHelper.resolvedRectangleRounded
+import dev.normansanchez.designsystem.components.foundations.media.image.helper.DSImageHelper.resolvedRectangleRoundedWithBackground
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageModel
 import dev.normansanchez.designsystem.components.foundations.media.image.model.DSImageType
+import dev.normansanchez.designsystem.theme.MentorConnectTheme
 
 
 /**
@@ -21,7 +25,7 @@ import dev.normansanchez.designsystem.components.foundations.media.image.model.D
  * @see resolvedRectangleRounded
  * @see resolvedRectangleRoundedWithBackground
  *
- * @sample dev.normansanchez.designsystem.components.previews.DSImageExample
+ * @sample DSImageExample
  *
  * @author Norman Sanchez
  * @since 1.0.0
@@ -39,3 +43,22 @@ fun DSImage(
     }
 }
 
+@Preview
+@Composable
+fun DSImageExample() {
+    MentorConnectTheme(
+        darkTheme = true,
+        dynamicColor = true
+    ) {
+        DSImage(
+            dsImageModel = DSImageModel(
+                imageSource = "https://uiskaogodllxicvnfdab.supabase.co/storage/v1/object/public/General%20assets/norman.jpg",
+                size = 140.dp,
+                imageType = DSImageType.RECTANGLE_ROUNDED_WITH_BACKGROUND,
+                onClickImage = {
+                    Log.i("TAG", "onCreate: On click image")
+                }
+            )
+        )
+    }
+}
